@@ -1,17 +1,17 @@
 "use strict";
 /* -------------------------------------------------------
-    NODEJS EXPRESS | CLARUSWAY FullStack Team
+    NODEJS EXPRESS 
 ------------------------------------------------------- */
 const router = require("express").Router();
 /* ------------------------------------------------------- */
 // routes/reservation:
 
-const permissions = require("../middlewares/permissions");
+const { isLogin } = require("../middlewares/permissions");
 const reservation = require("../controllers/reservation");
 
 // URL: /reservations
 
-// router.use(permissions.isLogin);
+router.use(isLogin);
 
 router.route("/").get(reservation.list).post(reservation.create);
 

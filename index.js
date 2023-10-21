@@ -2,9 +2,9 @@
 /* -------------------------------------------------------
     NODEJS EXPRESS | CLARUSWAY FullStack Team
 ------------------------------------------------------- */
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
 
 /* ------------------------------------------------------- */
 // Required Modules:
@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(require("./src/middlewares/authentication"));
 
 // Run Logger:
-app.use(require("./src/middlewares/logger")); //! morgon log izler.
+app.use(require("./src/middlewares/logger"));
 
 // res.getModelList():
 app.use(require("./src/middlewares/findSearchSortPage"));
@@ -51,8 +51,8 @@ app.all("/", (req, res) => {
   });
 });
 
-//! all routes have moved to one file routes/index.js
 app.use(require("./src/routes/"));
+// app.use(require("./src/routes/index.js"));
 
 /* ------------------------------------------------------- */
 

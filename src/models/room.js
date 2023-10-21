@@ -1,6 +1,6 @@
 "use strict";
 /* -------------------------------------------------------
-    NODEJS EXPRESS | CLARUSWAY FullStack Team
+    NODEJS EXPRESS 
 ------------------------------------------------------- */
 const { mongoose } = require("../configs/dbConnection");
 /* ------------------------------------------------------- *
@@ -45,7 +45,7 @@ const roomSchema = new mongoose.Schema(
       default: 100,
     },
   },
-  { collection: "rooms", timestamps: true }
+  { collection: "room", timestamps: true }
 );
 
 /* ------------------------------------------------------- */

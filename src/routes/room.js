@@ -1,6 +1,6 @@
 "use strict";
 /* -------------------------------------------------------
-    NODEJS EXPRESS | CLARUSWAY FullStack Team
+    NODEJS EXPRESS 
 ------------------------------------------------------- */
 const router = require("express").Router();
 /* ------------------------------------------------------- */
@@ -11,17 +11,7 @@ const room = require("../controllers/room");
 
 // URL: /rooms
 
-// router.route('/')
-//     .get(permissions.isStaffOrAdmin, flight.list)
-//     .post(permissions.isStaffOrAdmin, flight.create)
-
-// router.route('/:id')
-//     .get(permissions.isStaffOrAdmin, flight.read)
-//     .put(permissions.isStaffOrAdmin, flight.update)
-//     .patch(permissions.isStaffOrAdmin, flight.update)
-//     .delete(permissions.isAdmin, flight.delete)
-
-// router.use(permissions.isLogin);
+router.use(permissions.isAdmin);
 
 router.route("/").get(room.list).post(room.create);
 
@@ -30,7 +20,7 @@ router
   .get(room.read)
   .put(room.update)
   .patch(room.update)
-  .delete(room.delete);
+  .delete(permissions.isAdmin, room.delete);
 
 /* ------------------------------------------------------- */
 module.exports = router;

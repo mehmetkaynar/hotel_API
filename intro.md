@@ -1,10 +1,11 @@
-# FLIGHT RESERVATION API
+# HOTEL RESERVATION API
 
 ### ERD:
 
-![ERD](./erdFlightAPI.png)
+![ERD](./erdHotelAPI.png)
 
 ### Installation:
+
 ```sh
     $ mkdir logs
     $ cp .env-sample .env
@@ -25,11 +26,11 @@
             dbConnection.js
         controllers/
             auth.js
-            flight.js
-            passenger.js
             reservation.js
+            room.js
             user.js
         helpers/
+            dateToLocaleString.js
             passwordEncrypt.js
             setToken.js
             sync.js
@@ -40,14 +41,14 @@
             logger.js
             permissions.js
         models/
-            flight.js
-            passenger.js
             reservation.js
+            room.js
             user.js
         routes/
             auth.js
-            flight.js
-            passenger.js
+            document.js
+            index.js
             reservation.js
+            room.js
             user.js
 ```

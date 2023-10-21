@@ -1,6 +1,6 @@
 "use strict";
 /* -------------------------------------------------------
-	NODEJS EXPRESS | CLARUSWAY FullStack Team
+	NODEJS EXPRESS 
 ------------------------------------------------------- */
 const { mongoose } = require("../configs/dbConnection");
 /* ------------------------------------------------------- *
@@ -69,7 +69,7 @@ const ReservationSchema = new mongoose.Schema(
       },
     },
   },
-  { collection: "reservations", timestamps: true }
+  { collection: "reservation", timestamps: true }
 );
 
 /* ------------------------------------------------------- */

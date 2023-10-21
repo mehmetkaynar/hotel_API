@@ -1,33 +1,23 @@
-"use strict"
+"use strict";
 /* -------------------------------------------------------
-    NODEJS EXPRESS | CLARUSWAY FullStack Team
+    NODEJS EXPRESS 
 ------------------------------------------------------- */
-const router = require('express').Router()
+const router = require("express").Router();
 /* ------------------------------------------------------- */
 // routes/document:
 
 // URL: /documents
 
-router.all('/', (req, res) => {
-    res.send({
-        swagger: "/documents/swagger",
-        redoc: "/documents/redoc",
-        json: "/documents/json",
-    })
-})
-
-// JSON:
-router.use('/json', (req, res) => {
-    res.sendFile(`/src/configs/swagger.json`, { root: '.' })
-})
+router.all("/", (req, res) => {
+  res.send({
+    redoc: "/documents/redoc",
+    json: "/documents/json",
+  });
+});
 
 // Redoc:
-const redoc = require('redoc-express')
-router.use('/redoc', redoc({ specUrl: '/documents/json', title: 'API Docs' }))
-
-// Swagger:
-const swaggerUi = require('swagger-ui-express')
-router.use('/swagger', swaggerUi.serve, swaggerUi.setup(require('../configs/swagger.json'), { swaggerOptions: { persistAuthorization: true } }))
+const redoc = require("redoc-express");
+router.use("/redoc", redoc({ specUrl: "/documents/json", title: "API Docs" }));
 
 /* ------------------------------------------------------- */
-module.exports = router
+module.exports = router;

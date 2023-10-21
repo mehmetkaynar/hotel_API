@@ -1,8 +1,8 @@
 {
-  "title": "Flight Reservation API",
-  "name": "19-flightapi",
+  "title": "Hotel Reservation API",
+  "name": "hotelapi",
   "version": "1.0.0",
-  "description": "Flight Reservation Management System",
+  "description": "Hotel Reservation Management System",
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
