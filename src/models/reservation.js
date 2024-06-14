@@ -47,7 +47,6 @@ const ReservationSchema = new mongoose.Schema(
       required: true,
     },
     pax: {
-      //kafile(guest_number)
       type: Number,
       required: true,
     },

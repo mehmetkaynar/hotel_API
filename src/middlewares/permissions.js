@@ -15,8 +15,6 @@ module.exports = {
   },
 
   isSelfOrAdmin: (req, res, next) => {
-    //!  const isSelf=req.params.id===req.reservation.id ????????
-
     if (req.user && (req.user.isSelfOrStaff || req.user.isAdmin)) {
       next();
     } else {
